@@ -33,6 +33,7 @@ button {
   max-width: 95px;
 }
 
+
 button:hover, button:focus{
     background-color: #6C8CFF;
 }
