@@ -76,20 +76,23 @@ container.addEventListener('click', e => {
 });
 
 function createImgItems() {
-  const resutl = images
+  const result = images
     .map(image => {
       return `
         <li class="gallery-item">
-  <a class="gallery-link" href="${image.original}">
-    <img class="gallery-image" src="${image.preview}" alt="${image.description}" />
-  </a>
-</li>
-        `;
+          <a class="gallery-link" href="${image.original}">
+            <img class="gallery-image" src="${image.preview}" alt="${image.description}" />
+          </a>
+        </li>
+      `;
     })
-        .join('\n');
-    container.innerHTML = resutl;
-};
+    .join('\n');
+  container.innerHTML = result;
+}
+
+createImgItems(); 
 
 var lightbox = new SimpleLightbox('.gallery a', {
-  /* options */
+  captionsData: 'alt',
+  captionDelay: 250,
 });
